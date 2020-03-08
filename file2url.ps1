@@ -1,4 +1,3 @@
-#requires -version 2
 <#
 .SYNOPSIS
   file2url.ps1
@@ -17,11 +16,6 @@
   See Parameters.
 .OUTPUTS
   file url in the system clipboard.
-.NOTES
-  Version:        1.0
-  Author:         swiit Számítástechnikai és Iparmûvészeti Kft. / Árpád Szilágyi
-  Creation Date:  08.03.2020
-  Purpose/Change: Initial script development.
 .EXAMPLE
 Testcalls (for VS Code with PowerShell:Run selection [F8]; the working dir is the project manager dir!)
   --without debug
@@ -33,28 +27,36 @@ Testcalls (for VS Code with PowerShell:Run selection [F8]; the working dir is th
     PowerShell.exe -noexit -executionpolicy bypass -File file2url.ps1 file2urlTest-Nok.txt -pWriteDebug "yes" -pForCnfl "yes"
     PowerShell.exe -noexit -executionpolicy bypass -File file2url.ps1 file2urlTestäNok.txt -pWriteDebug "yes" -pForCnfl "yes"
     PowerShell.exe -noexit -executionpolicy bypass -File file2url.ps1 file2urlTestOk.txt -pWriteDebug "yes" -pForCnfl "yes"
+.LINK
+  https://github.com/arpadszilagyi/file2url.git    
+.NOTES 
+  swiit Számítástechnikai és Iparmûvészeti Kft. 
+  +------------------+-----------+------------+------------+-----------------------------------------------
+   Author             Version     Datum         Suchstring
+  +------------------+-----------+------------+------------+-----------------------------------------------
+   Árpád Szilágyi     1.0.0.0     08.03.2020                Initial script development.
+  +------------------+-----------+------------+------------+-----------------------------------------------
 
-.USAGE TotalCommander without Debug
-  Command...: PowerShell.exe -executionpolicy bypass -WindowStyle Hidden -File <path>\file2url.ps1
-  Parameters: %P%S -pWriteDebug "no" -pForCnfl "yes"
-  Start Path: d:\tmp
-  Tooltip...: DEBUG=FALSE - Converts full path name of selected file to file url for Confluence.
+  .USAGE - in TotalCommander without Debug
+    Command...: PowerShell.exe -executionpolicy bypass -WindowStyle Hidden -File <path>\file2url.ps1
+    Parameters: %P%S -pWriteDebug "no" -pForCnfl "yes"
+    Start Path: d:\tmp
+    Tooltip...: DEBUG=FALSE - Converts full path name of selected file to file url for Confluence.
 
-.USAGE TotalCommander with Debug
-  Command...: PowerShell.exe -executionpolicy bypass -noexit             -File <path>\file2url.ps1
-  Parameters: %P%S -pWriteDebug "yes" -pForCnfl "yes"
-  Start Path: d:\tmp
-  Tooltip...: DEBUG=TRUE - Converts full path name of selected file to file url for Confluence.
+  .USAGE - in TotalCommander with Debug
+    Command...: PowerShell.exe -executionpolicy bypass -noexit             -File <path>\file2url.ps1
+    Parameters: %P%S -pWriteDebug "yes" -pForCnfl "yes"
+    Start Path: d:\tmp
+    Tooltip...: DEBUG=TRUE - Converts full path name of selected file to file url for Confluence.
 
-.KNOWHOW  
-  $colors = [enum]::GetValues([System.ConsoleColor])
+  .KNOWHOW - [System.ConsoleColor]
+    $colors = [enum]::GetValues([System.ConsoleColor])
 
-  Foreach ($bgcolor in $colors){
-    Foreach ($fgcolor in $colors) { Write-Host "$fgcolor|"  -ForegroundColor $fgcolor -BackgroundColor $bgcolor -NoNewLine }
-    Write-Host " on $bgcolor"
-  }
-
-  Black|DarkBlue|DarkGreen|DarkCyan|DarkRed|DarkMagenta|DarkYellow|Gray|DarkGray|Blue|Green|Cyan|Red|Magenta|Yellow|White
+    Foreach ($bgcolor in $colors){
+      Foreach ($fgcolor in $colors) { Write-Host "$fgcolor|"  -ForegroundColor $fgcolor -BackgroundColor $bgcolor -NoNewLine }
+      Write-Host " on $bgcolor"
+    }
+    Black|DarkBlue|DarkGreen|DarkCyan|DarkRed|DarkMagenta|DarkYellow|Gray|DarkGray|Blue|Green|Cyan|Red|Magenta|Yellow|White
 #>
 
 #
