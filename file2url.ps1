@@ -22,7 +22,6 @@
   Author:         swiit Számítástechnikai és Iparmûvészeti Kft. / Árpád Szilágyi
   Creation Date:  08.03.2020
   Purpose/Change: Initial script development.
-  
 .EXAMPLE
 Testcalls (for VS Code with PowerShell:Run selection [F8]; the working dir is the project manager dir!)
   --without debug
